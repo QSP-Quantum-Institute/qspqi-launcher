@@ -5,7 +5,7 @@ services:
   qspqi-web-main:
     build:
       context: ./qspqi-web-main
-      dockerfile: Dockerfile.dev
+      dockerfile: deployment/docker/Dockerfile.dev
     ports:
       - "${QSPQI_WEB_MAIN_PORT}:${QSPQI_WEB_MAIN_PORT}"
     volumes:
@@ -22,7 +22,7 @@ services:
   qspqi-web-hioxx:
     build:
       context: ./qspqi-web-hioxx
-      dockerfile: Dockerfile.dev
+      dockerfile: deployment/docker/Dockerfile.dev
     ports:
       - "${QSPQI_WEB_HIOXX_PORT}:${QSPQI_WEB_HIOXX_PORT}"
     volumes:
