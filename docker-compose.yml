@@ -1,0 +1,34 @@
+services:
+  # =============================
+  # QSPQI WEB MAIN
+  # =============================
+  qspqi-web-main:
+    build:
+      context: ./qspqi-web-main
+      dockerfile: Dockerfile.dev
+    ports:
+      - "${QSPQI_WEB_MAIN_PORT}:${QSPQI_WEB_MAIN_PORT}"
+    volumes:
+      - ./qspqi-web-main/src:/usr/src/app/src
+      - ./qspqi-web-main/public:/usr/src/app/public
+      - /usr/src/app/node_modules
+    command: npm run dev -- --host 0.0.0.0 --port ${QSPQI_WEB_MAIN_PORT}
+    environment:
+      - PORT=${QSPQI_WEB_MAIN_PORT}
+  
+  # =============================
+  # QSPQI WEB HIOXX
+  # =============================
+  qspqi-web-hioxx:
+    build:
+      context: ./qspqi-web-hioxx
+      dockerfile: Dockerfile.dev
+    ports:
+      - "${QSPQI_WEB_HIOXX_PORT}:${QSPQI_WEB_HIOXX_PORT}"
+    volumes:
+      - ./qspqi-web-hioxx/src:/usr/src/app/src
+      - ./qspqi-web-hioxx/public:/usr/src/app/public
+      - /usr/src/app/node_modules
+    command: npm run dev -- --host 0.0.0.0 --port ${QSPQI_WEB_HIOXX_PORT}
+    environment:
+      - PORT=${QSPQI_WEB_HIOXX_PORT}
