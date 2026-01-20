@@ -1,0 +1,9 @@
+[submodule "qspqi-web-main"]
+	path = qspqi-web-main
+	branch = dev
+	url = https://github.com/QSP-Quantum-Institute/qspqi-web-main.git
+
+[submodule "qspqi-web-hioxx"]
+	path = qspqi-web-hioxx
+	branch = dev
+	url = https://github.com/QSP-Quantum-Institute/qspqi-web-hioxx.git
