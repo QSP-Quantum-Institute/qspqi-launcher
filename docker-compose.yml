@@ -15,6 +15,7 @@ services:
     command: npm run dev -- --host 0.0.0.0 --port ${QSPQI_WEB_MAIN_PORT}
     environment:
       - PORT=${QSPQI_WEB_MAIN_PORT}
+      - VITE_HIOXX_URL=${QSPQI_WEB_MAIN_VITE_HIOXX_URL}
   
   # =============================
   # QSPQI WEB HIOXX
