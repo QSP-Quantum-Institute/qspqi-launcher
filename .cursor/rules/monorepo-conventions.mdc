@@ -1,0 +1,25 @@
+---
+description: Convenciones del monorepo QSPQI Launcher — submodules independientes, no cross-imports
+alwaysApply: true
+---
+
+# Monorepo Conventions
+
+## Structure
+
+- `qspqi-web-main/` — Portal (submodule)
+- `qspqi-web-hioxx/` — HIOXX calculator (submodule)
+- No shared packages; each submodule is an independent Vite project
+
+## Rules
+
+- Never create cross-imports between submodules
+- Business specs live in the relevant submodule (`qspqi-web-hioxx/docs/specs/`)
+- Shared branding (colors, fonts) is duplicated intentionally — keep in sync manually
+- Use docker-compose from monorepo root for local dev
+- HIOXX is embedded in main via iframe at `/hioxx`
+
+## Agent Context
+
+- Monorepo-level: `AGENTS.md`, `docs/MONOREPO.md`
+- HIOXX-specific: `qspqi-web-hioxx/AGENTS.md`, `qspqi-web-hioxx/docs/specs/`
